@@ -605,7 +605,7 @@ class Resize(Transform, v2.Resize):
 
     def __call__(self, x):
         self.nested_set(
-            x, self.transform(self.nested_get(x, self.source), []), self.target
+            x, self._transform(self.nested_get(x, self.source), []), self.target
         )
         return x
 
